@@ -1,0 +1,1090 @@
+<!--
+  Generated template for the NewReportPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger" >
+    <ion-title>Pharmacy Stock Recordings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+	
+<ion-content padding>
+
+<ion-card id="page-card21" color="primary">
+    <ion-list>
+
+      <h1 id="page-heading1" style="color:#000000;" padding>
+        Post Stock levels To Pharmacy Manager
+      </h1>
+
+      <form id="page-form1" (ngSubmit)="uploadReport(f.value)" #f="ngForm">
+      	<ion-item padding-vertical>
+      	  <ion-label>
+      	    <strong>Health Facility</strong>
+      	  </ion-label>
+      	  <ion-select name="facility" required ngModel>
+            <ion-option value="Avilla Mission Hospital">
+              Avilla Mission Hospital
+            </ion-option>
+            <ion-option value="Chatindo clinic">
+              Chatindo clinic
+            </ion-option>
+            <ion-option value="Chiwarira clinic">
+              Chiwarira clinic
+            </ion-option>
+            <ion-option value="Claremont estate clinic">
+              Claremont estate clinic
+            </ion-option>
+            <ion-option value="Dombo rural health centre">
+              Dombo rural health centre
+            </ion-option>
+            <ion-option value="Elim mission hospital">
+              Elim mission hospital
+            </ion-option>
+            <ion-option value="Erin forest estate clinic">
+              Erin forest estate clinic
+            </ion-option>
+            <ion-option value="Fombe rural health centre">
+              Fombe rural health centre
+            </ion-option>
+            <ion-option value="Gairezi rural health centre">
+              Gairezi rural health centre
+            </ion-option>
+            <ion-option value="Gotekote rural health centre">
+              Gotekote rural health centre
+            </ion-option>
+            <ion-option value="Kambudzi clinic">
+              Kambudzi clinic
+            </ion-option>
+            <ion-option value="Matize rural health centre">
+              Matize rural health centre
+            </ion-option>
+            <ion-option value="Mt mellery mission hospital">
+              Mt mellery mission hospital
+            </ion-option>
+            <ion-option value="Nyadowa clinic">
+              Nyadowa clinic
+            </ion-option>
+            <ion-option value="Nyafaru clinic">
+              Nyafaru clinic
+            </ion-option>
+            <ion-option value="Nyajezi clinic">
+              Nyajezi clinic
+            </ion-option>
+            <ion-option value="Nyamaropa clinic">
+              Nyamaropa clinic
+            </ion-option>
+            <ion-option value="Nyamombe clinic">
+              Nyamombe clinic
+            </ion-option>
+            <ion-option value="Nyanga district hospital">
+              Nyanga district hospital
+            </ion-option>
+            <ion-option value="Nyarumvurwe rural health centre">
+              Nyarumvurwe rural health centre
+            </ion-option>
+            <ion-option value="Nyatate clinic">
+              Nyatate clinic
+            </ion-option>
+            <ion-option value="Nyautare rural health centre">
+              Nyautare rural health centre
+            </ion-option>
+            <ion-option value="Regina coeli mission hospital">
+              Regina coeli mission hospital
+            </ion-option>
+            <ion-option value="Ruchera rural health centre">
+              Ruchera rural health centre
+            </ion-option>
+            <ion-option value="Sabvure clinic">
+              Sabvure clinic
+            </ion-option>
+            <ion-option value="Spring valley clinic">
+              Spring valley clinic
+            </ion-option>
+      	    <ion-option value="Tombo clinic">
+      	      Tombo clinic
+      	    </ion-option>
+      	    <ion-option value="other">
+             other 
+            </ion-option>
+      	  </ion-select>
+      	</ion-item>
+
+        <ion-item-divider>
+            <strong>MEDICINES</strong>
+          </ion-item-divider>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Amoxilicillin tablets
+          </ion-label>
+          <ion-select name="Amoxilicillin_tablets" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Metronidazole 400mg
+          </ion-label>
+          <ion-select name="Metronidazole_400mg" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Doxycycline 100mg
+          </ion-label>
+          <ion-select name="Doxycycline_100mg" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Erythromycin 250mg
+          </ion-label>
+          <ion-select name="Erythromycin_250mg" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Benzyl penicillin 5mu
+          </ion-label>
+          <ion-select name="Benzyl_penicillin_5ml" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Gentamycin 40mg/mg
+          </ion-label>
+          <ion-select name="Gentamycin_40mg" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Diclofenac 25mg/ml inj.
+          </ion-label>
+          <ion-select name="Diclofenac_25ml_inj" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Magnesium Sulphate inj.
+          </ion-label>
+          <ion-select name="Magnesium_Sulphate_inj" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Hydralazine
+          </ion-label>
+          <ion-select name="Hydralazine" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Calcium gluconate
+          </ion-label>
+          <ion-select name="Calcium_gluconate" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Adrenaline inj.
+          </ion-label>
+          <ion-select name="Adrenaline_inj" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Oxytocin inj
+          </ion-label>
+          <ion-select name="Oxytocin_inj" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Vitamin K inj.
+          </ion-label>
+          <ion-select name="Vitamin_K_inj" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            CPZ inj
+          </ion-label>
+          <ion-select name="CPZ_inj" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Diazepam inj
+          </ion-label>
+          <ion-select name="Diazepam_inj" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Benzathine inj
+          </ion-label>
+          <ion-select name="Benzathine_inj" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            FD
+          </ion-label>
+          <ion-select name="FD" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Paracetamol tablets(500mg & 100mg)
+          </ion-label>
+          <ion-select name="Paracetamol_tablets_500mg_and_100mg" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Ibuprofen 400mg
+          </ion-label>
+          <ion-select name="Ibuprofen_400mg" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            MMT
+          </ion-label>
+          <ion-select name="MMT" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Aspirin
+          </ion-label>
+          <ion-select name="Aspirin" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Cotton wool 500g
+          </ion-label>
+          <ion-select name="Cotton_wool_500g" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Nu gauze swabs
+          </ion-label>
+          <ion-select name="Nu_gauze_swabs" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Urine bags
+          </ion-label>
+          <ion-select name="Urine_bags" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Latex gloves
+          </ion-label>
+          <ion-select name="Latex_gloves" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Zinc oxide strapping
+          </ion-label>
+          <ion-select name="zinc_oxide_strapping" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            21G, 23G needles
+          </ion-label>
+          <ion-select name="needles_21G_23G" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Cord clamps
+          </ion-label>
+          <ion-select name="Cord_clamps" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Sutures(2 chromic RC, RB & 1 nylon)
+          </ion-label>
+          <ion-select name="Sutures_2_chromic_RC_RB_and_1_nylon" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Foleys catheter
+          </ion-label>
+          <ion-select name="Foleys_catheter" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Syringes (2ml & 5ml)
+          </ion-label>
+          <ion-select name="Syringes_2ml_and_5ml" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Cannulas
+          </ion-label>
+          <ion-select name="Cannulas" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Crepe bandages
+          </ion-label>
+          <ion-select name="Crepe_bandages" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            HCT 25mg
+          </ion-label>
+          <ion-select name="HCT_25mg" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Nifedipine 20mg
+          </ion-label>
+          <ion-select name="Nifedipine_20mg" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Metformin 500mg
+          </ion-label>
+          <ion-select name="Metformin_500mg" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Glibenclamide 5mg
+          </ion-label>
+          <ion-select name="Glibenclamide_5mg" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Frusemide 40mg
+          </ion-label>
+          <ion-select name="Frusemide_40mg" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            CPZ 100mg
+          </ion-label>
+          <ion-select name="CPZ_100mg" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Fefo 
+          </ion-label>
+          <ion-select name="Fefo" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Haloperidol
+          </ion-label>
+          <ion-select name="Haloperidol" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Phenorbitone
+          </ion-label>
+          <ion-select name="Phenorbitone" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            glucostrips
+          </ion-label>
+          <ion-select name="glucostrips" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            urine analysis strips
+          </ion-label>
+          <ion-select name="urine_Analysis_Strips" required ngModel>
+            <ion-option value='High'>
+              High
+            </ion-option>
+            <ion-option value='Low'>
+              Low
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+                <!--solutions-->
+                <ion-item-divider>
+                    <strong>SOLUTIONS</strong>
+                  </ion-item-divider>
+
+                <ion-item padding-vertical>
+                  <ion-label>
+                    Betadine
+                  </ion-label>
+                  <ion-select name="Betadine" required ngModel>
+                    <ion-option value='High'>
+                      High
+                    </ion-option>
+                    <ion-option value='Low'>
+                      Low
+                    </ion-option>
+                    <ion-option value='Unavailable'>
+                      Unavailable
+                    </ion-option>
+                  </ion-select>
+                </ion-item>
+
+                <ion-item padding-vertical>
+                  <ion-label>
+                    Spirit
+                  </ion-label>
+                  <ion-select name="Spirit" required ngModel>
+                    <ion-option value='High'>
+                      High
+                    </ion-option>
+                    <ion-option value='Low'>
+                      Low
+                    </ion-option>
+                    <ion-option value='Unavailable'>
+                      Unavailable
+                    </ion-option>
+                  </ion-select>
+                </ion-item>
+
+                <ion-item padding-vertical>
+                  <ion-label>
+                    G & I
+                  </ion-label>
+                  <ion-select name="G_and_I" required ngModel>
+                    <ion-option value='High'>
+                      High
+                    </ion-option>
+                    <ion-option value='Low'>
+                      Low
+                    </ion-option>
+                    <ion-option value='Unavailable'>
+                      Unavailable
+                    </ion-option>
+                  </ion-select>
+                </ion-item>
+
+                <ion-item padding-vertical>
+                  <ion-label>
+                    Normal saline
+                  </ion-label>
+                  <ion-select name="Normal_Saline" required ngModel>
+                    <ion-option value='High'>
+                      High
+                    </ion-option>
+                    <ion-option value='Low'>
+                      Low
+                    </ion-option>
+                    <ion-option value='Unavailable'>
+                      Unavailable
+                    </ion-option>
+                  </ion-select>
+                </ion-item>
+
+                <ion-item padding-vertical>
+                  <ion-label>
+                    Ringers lactate
+                  </ion-label>
+                  <ion-select name="Ringers_Lactate" required ngModel>
+                    <ion-option value='High'>
+                      High
+                    </ion-option>
+                    <ion-option value='Low'>
+                      Low
+                    </ion-option>
+                    <ion-option value='Unavailable'>
+                      Unavailable
+                    </ion-option>
+                  </ion-select>
+                </ion-item>
+        <!--opthalmic-->
+                <ion-item padding-vertical>
+                  <ion-label>
+                    TEO
+                  </ion-label>
+                  <ion-select name="TEO" required ngModel>
+                    <ion-option value='High'>
+                      High
+                    </ion-option>
+                    <ion-option value='Low'>
+                      Low
+                    </ion-option>
+                    <ion-option value='Unavailable'>
+                      Unavailable
+                    </ion-option>
+                  </ion-select>
+                </ion-item>
+
+<!--Machinery-->
+        <ion-item-divider>
+            <strong>EQUIPMENT</strong>
+          </ion-item-divider>
+        <ion-item padding-vertical>
+          <ion-label>
+            BP machines
+          </ion-label>
+          <ion-select name="BP_machines" required ngModel>
+            <ion-option value='working'>
+              Working
+            </ion-option>
+            <ion-option value='not_working'>
+              Not working
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Glucometers
+          </ion-label>
+          <ion-select name="Glucometers" required ngModel>
+            <ion-option value='working'>
+              Working
+            </ion-option>
+            <ion-option value='not_working'>
+              Not working
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Thermometers
+          </ion-label>
+          <ion-select name="Thermometers" required ngModel>
+            <ion-option value='working'>
+              Working
+            </ion-option>
+            <ion-option value='not_working'>
+              Not working
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Haemoglobin machine
+          </ion-label>
+          <ion-select name="Haemoglobin_Machine" required ngModel>
+            <ion-option value='working'>
+              Working
+            </ion-option>
+            <ion-option value='not_working'>
+              Not working
+            </ion-option>
+            <ion-option value='Unavailable'>
+              Unavailable
+            </ion-option>
+          </ion-select>
+        </ion-item>
+        
+<!--
+        <ion-item id="page-input2">
+          <ion-label>
+            text Input
+          </ion-label>
+          <ion-input type="text" name="myText" placeholder="put yo text here" ngModel></ion-input>
+        </ion-item>
+
+        <ion-item id="page-input5">
+          <ion-label>
+            number Input
+          </ion-label>
+          <ion-input type="number" placeholder="put yo number here" name="level" ngModel></ion-input>
+        </ion-item>
+        <ion-input type="date" placeholder="recorded on" name="date" required ngModel></ion-input>
+-->
+        
+
+        <ion-item padding-vertical>
+          <ion-label>
+            Date
+          </ion-label>
+          <ion-datetime displayFormat="DD MM YYYY" placeholder="DD MM YYYY" name="date" required ngModel></ion-datetime>
+        </ion-item>
+
+        <!--
+        <ion-item padding-vertical>
+          <ion-label>
+            I have verified my data to be authentic and free of any errors
+          </ion-label>
+          <ion-checkbox name="consent" required ngModel checked="true"></ion-checkbox>
+        </ion-item>
+        -->
+
+        <button ion-button color="danger" [disabled]="!f.valid" type="submit">Save Recordings</button>
+
+        <!--
+          <button ion-button type="submit" [disabled]="!f.valid">Save Recordings</button>
+        -->
+      </form>
+    </ion-list>
+  </ion-card>
+</ion-content>

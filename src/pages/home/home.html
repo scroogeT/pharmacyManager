@@ -1,0 +1,179 @@
+<ion-header>
+  <ion-navbar color="danger">
+
+    <ion-title>Home</ion-title>
+    <ion-buttons right>
+  		<button ion-button icon-right (click)="logOut()">
+  			<ion-icon name="log-out">logout</ion-icon>
+  		</button>
+  	</ion-buttons>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+      <button (click)="addReport()" ion-button block>Add Report</button>
+      <ion-list >
+          <ion-card color="danger">
+            <ion-card-header color="light">
+              General Info
+            </ion-card-header>
+          
+            <ion-card-content>
+              <ion-list>
+                <ion-item>
+                <p>Please make sure all the information you provide is accurate</p>
+                </ion-item>
+                <ion-item>
+                <p>To reset your password tap the reset password button and enter the email you used when creating an account.
+                <br>
+                An email will be sent to you with a link to reset you password</p>
+                </ion-item>
+                <ion-item>
+                  <p>To submit a disaster report, please Fill in the form below and describe incident in brief detail.</p>
+                </ion-item>
+              </ion-list>
+            </ion-card-content>
+          
+          </ion-card>
+      </ion-list>
+
+
+      <ion-card color="light">
+      
+        <ion-card-header>
+          <strong>Incident Report</strong>
+        </ion-card-header>
+      
+        <ion-card-content>
+          <form (ngSubmit)="disasterReport(f.value)" #f="ngForm">
+            <ion-list>
+
+                <ion-item padding-vertical>
+                  <ion-label>
+                    <strong>Health Facility</strong>
+                  </ion-label>
+                  <ion-select name="facility" required ngModel>
+                    <ion-option value="Avilla Mission Hospital">
+                      Avilla Mission Hospital
+                    </ion-option>
+                    <ion-option value="Chatindo clinic">
+                      Chatindo clinic
+                    </ion-option>
+                    <ion-option value="Chiwarira clinic">
+                      Chiwarira clinic
+                    </ion-option>
+                    <ion-option value="Claremont estate clinic">
+                      Claremont estate clinic
+                    </ion-option>
+                    <ion-option value="Dombo rural health centre">
+                      Dombo rural health centre
+                    </ion-option>
+                    <ion-option value="Elim mission hospital">
+                      Elim mission hospital
+                    </ion-option>
+                    <ion-option value="Erin forest estate clinic">
+                      Erin forest estate clinic
+                    </ion-option>
+                    <ion-option value="Fombe rural health centre">
+                      Fombe rural health centre
+                    </ion-option>
+                    <ion-option value="Gairezi rural health centre">
+                      Gairezi rural health centre
+                    </ion-option>
+                    <ion-option value="Gotekote rural health centre">
+                      Gotekote rural health centre
+                    </ion-option>
+                    <ion-option value="Kambudzi clinic">
+                      Kambudzi clinic
+                    </ion-option>
+                    <ion-option value="Matize rural health centre">
+                      Matize rural health centre
+                    </ion-option>
+                    <ion-option value="Mt mellery mission hospital">
+                      Mt mellery mission hospital
+                    </ion-option>
+                    <ion-option value="Nyadowa clinic">
+                      Nyadowa clinic
+                    </ion-option>
+                    <ion-option value="Nyafaru clinic">
+                      Nyafaru clinic
+                    </ion-option>
+                    <ion-option value="Nyajezi clinic">
+                      Nyajezi clinic
+                    </ion-option>
+                    <ion-option value="Nyamaropa clinic">
+                      Nyamaropa clinic
+                    </ion-option>
+                    <ion-option value="Nyamombe clinic">
+                      Nyamombe clinic
+                    </ion-option>
+                    <ion-option value="Nyanga district hospital">
+                      Nyanga district hospital
+                    </ion-option>
+                    <ion-option value="Nyarumvurwe rural health centre">
+                      Nyarumvurwe rural health centre
+                    </ion-option>
+                    <ion-option value="Nyatate clinic">
+                      Nyatate clinic
+                    </ion-option>
+                    <ion-option value="Nyautare rural health centre">
+                      Nyautare rural health centre
+                    </ion-option>
+                    <ion-option value="Regina coeli mission hospital">
+                      Regina coeli mission hospital
+                    </ion-option>
+                    <ion-option value="Ruchera rural health centre">
+                      Ruchera rural health centre
+                    </ion-option>
+                    <ion-option value="Sabvure clinic">
+                      Sabvure clinic
+                    </ion-option>
+                    <ion-option value="Spring valley clinic">
+                      Spring valley clinic
+                    </ion-option>
+                    <ion-option value="Tombo clinic">
+                      Tombo clinic
+                    </ion-option>
+                    <ion-option value="other">
+                     other 
+                    </ion-option>
+                  </ion-select>
+                </ion-item>
+
+                <ion-item padding-vertical>
+                  <ion-label>Date</ion-label>
+                  <ion-datetime displayFormat="DD MM YYYY" placeholder="DD MM YYYY" name="date" required ngModel></ion-datetime>
+                </ion-item>
+
+              <!--
+                <ion-item>
+                  <ion-label stacked>Username</ion-label>
+                  <ion-input type="email" name="username" ngModel></ion-input>
+                </ion-item>
+              -->
+
+              <ion-item>
+                  <ion-label stacked>Description</ion-label>
+                  <ion-textarea placeholder="Describe the incident" name="Description" required ngModel></ion-textarea>
+              </ion-item>
+
+            </ion-list>
+
+            <button ion-button [disabled]="!f.valid" type="Submit"> Submit Report</button>
+          </form>
+        </ion-card-content>
+      
+      </ion-card>
+
+
+      <!--
+      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+      <ion-grid>
+      	<ion-row *ngFor="let item of shoppingItems | async">
+      		{{ item.$value }}
+      	</ion-row>
+      </ion-grid>
+      -->
+</ion-content>

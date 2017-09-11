@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>Hospital Incidents Report</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+<ion-item *ngIf="!disasterItems" color="dark">
+  <p>There are no Disaster Reports on this Hospital</p>
+</ion-item>
+<ion-card *ngFor="let item of disasterItems | async" color="primary">
+
+  <ion-card-header >
+    <strong>Submitted by: {{item.userMail}} on, {{item.date}}</strong>
+  </ion-card-header>
+
+  <ion-card-content>
+    <!-- Add card content here! -->
+    <ion-item>
+    <p>{{item.Description}}</p>
+    </ion-item>
+    
+  </ion-card-content>
+
+</ion-card>
+</ion-content>

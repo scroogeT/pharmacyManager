@@ -1,0 +1,654 @@
+<!--
+  Generated template for the HospitalDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>Hospital Detailed Report</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <ion-card color="danger" *ngIf="!hospitalItems">    
+      <ion-card-header>
+        No Information
+      </ion-card-header>
+      <ion-card-content>
+        <p>Sorry, No information has been found on this Hospital !!!</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-list >
+      <ion-card color="primary" *ngFor="let item of hospitalItems | async">
+        <ion-card-header >
+          <strong>{{item.facility}}, {{item.date}} Report</strong>
+        </ion-card-header>
+      
+        <ion-card-content>
+          <h4>Select Query to start</h4>
+          <ion-list>
+            <ion-item>
+            <!--https://javebratt.com/query-angularfire2-lists/-->
+              <ion-label>Drug / Equipment State</ion-label>
+              <ion-select [(ngModel)]="status"><!--(ionChange)="drugFilter(status)"-->
+                <ion-option value="High">Available-High</ion-option>
+                <ion-option value="Low">Available-Low</ion-option>
+                <ion-option value="Unavailable" checked="true">Not Available</ion-option>
+                <ion-item-divider>Equipment</ion-item-divider>
+                <ion-option value="working">(Equipment) Working</ion-option>
+                <ion-option value="not_working">(Equipment) Not Working</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+
+          <ion-list>
+          <ion-grid>
+
+            <ion-row *ngIf="item.consent==true" >
+              <ion-col color="primary">
+                  <ion-item item-right><strong>Error Checking, Done</strong></ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Amoxilicillin_tablets && item.Amoxilicillin_tablets==status">
+              <ion-col>
+                <ion-item item-left><strong>Amoxilicillin tablets</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>{{item.Amoxilicillin_tablets}}</ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Metronidazole_400mg && item.Metronidazole_400mg==status">
+              <ion-col>
+                <ion-item  item-left><strong>Metronidazole 400mg</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>{{item.Metronidazole_400mg}}</ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Doxycycline_100mg && item.Doxycycline_100mg==status">
+              <ion-col>
+              <ion-item   item-left><strong>Doxycycline 100mg</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                  {{item.Doxycycline_100mg}}
+                  </ion-item>
+              </ion-col>
+            </ion-row>
+            
+            <ion-row *ngIf="item.Erythromycin_250mg && item.Erythromycin_250mg==status">
+                <ion-col>
+                    <ion-item   item-left><strong>Erythromycin 250mg</strong></ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                  {{item.Erythromycin_250mg}}
+                  </ion-item>
+                </ion-col>
+            </ion-row>
+            
+            <ion-row *ngIf="item.Benzyl_penicillin_5ml && item.Benzyl_penicillin_5ml==status" >
+              <ion-col>
+                  <ion-item item-left><strong>Benzyl penicillin 5mu</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                {{item.Benzyl_penicillin_5ml}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row  *ngIf="item.Gentamycin_40mg && item.Gentamycin_40mg==status" >
+              <ion-col>
+                  <ion-item item-left><strong>Gentamycin 40mg/mg</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                {{item.Gentamycin_40mg}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Diclofenac_25ml_inj && item.Diclofenac_25ml_inj==status">
+              <ion-col>
+                <ion-item item-left><strong>Diclofenac 25mg/ml inj.</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                  {{item.Diclofenac_25ml_inj}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            
+            <ion-row *ngIf="item.Magnesium_Sulphate_inj && item.Magnesium_Sulphate_inj==status" >
+              <ion-col>
+                  <ion-item ><strong>Magnesium Sulphate inj.</strong></ion-item>
+              </ion-col>
+              <ion-col>
+              <ion-item>
+                {{item.Magnesium_Sulphate_inj}}
+              </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Hydralazine && item.Hydralazine==status">
+              <ion-col>
+                  <ion-item  ><strong>Hydralazine</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                {{item.Hydralazine}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Calcium_gluconate && item.Calcium_gluconate==status">
+              <ion-col>
+                  <ion-item ><strong>Calcium gluconate</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                  {{item.Calcium_gluconate}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Adrenaline_inj && item.Adrenaline_inj==status" >
+              <ion-col>
+                  <ion-item ><strong>Adrenaline inj.</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                  {{item.Adrenaline_inj}}
+                  </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Oxytocin_inj && item.Oxytocin_inj==status">
+              <ion-col>
+                  <ion-item ><strong>Oxytocin inj</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                  {{item.Oxytocin_inj}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+                  
+            <ion-row *ngIf="item.Vitamin_K_inj && item.Vitamin_K_inj==status">
+              <ion-col>
+                  <ion-item ><strong>Vitamin K inj.k</strong> </ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                  {{item.Vitamin_K_inj}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.CPZ_inj && item.CPZ_inj==status">
+              <ion-col>
+                  <ion-item  ><strong>CPZ inj</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                  {{item.CPZ_inj}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Diazepam_inj && item.Diazepam_inj==status">
+              <ion-col>
+                  <ion-item  ><strong>Diazepam inj</strong> </ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                {{item.Diazepam_inj}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Benzathine_inj && item.Benzathine_inj==status">
+              <ion-col>
+                  <ion-item ><strong>Benzathine inj</strong></ion-item>
+              </ion-col>
+              <ion-col>
+              <ion-item>
+              {{item.Benzathine_inj}}
+              </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.FD && item.FD==status">
+              <ion-col>
+                  <ion-item ><strong>FD</strong> </ion-item>
+              </ion-col>
+              <ion-col>
+              <ion-item>
+                {{item.FD}}
+              </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Paracetamol_tablets_500mg_and_100mg && item.Paracetamol_tablets_500mg_and_100mg==status">
+              <ion-col>
+                  <ion-item ><strong>Paracetamol tablets(500mg & 100mg)</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                {{item.Paracetamol_tablets_500mg_and_100mg}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Ibuprofen_400mg && item.Ibuprofen_400mg==status">
+              <ion-col>
+                  <ion-item ><strong>Ibuprofen 400mg</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                  {{item.Ibuprofen_400mg}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.MMT && item.MMT==status">
+              <ion-col>
+                  <ion-item ><strong>MMT</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                  {{item.MMT}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Aspirin && item.Aspirin==status">
+              <ion-col>
+                  <ion-item  ><strong>Aspirin</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                  {{item.Aspirin}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Cotton_wool_500g && item.Cotton_wool_500g==status" >
+              <ion-col>
+                  <ion-item ><strong>Cotton wool 500g</strong></ion-item>
+              </ion-col>
+              <ion-col>
+              <ion-item>
+              {{item.Cotton_wool_500g}}
+              </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Nu_gauze_swabs && item.Nu_gauze_swabs==status">
+              <ion-col>
+                  <ion-item  ><strong>Nu gauze swabs</strong></ion-item>
+              </ion-col>
+              <ion-col>
+              <ion-item>
+              {{item.Nu_gauze_swabs}}
+              </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Urine_bags && item.Urine_bags==status">
+              <ion-col>
+                  <ion-item  ><strong>Urine bags</strong></ion-item>
+              </ion-col>
+              <ion-col>
+              <ion-item>
+              {{item.Urine_bags}}
+              </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Latex_gloves && item.Latex_gloves==status" >
+              <ion-col>
+                  <ion-item ><strong>Latex gloves</strong> </ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                {{item.Latex_gloves}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.zinc_oxide_strapping && item.zinc_oxide_strapping==status">
+              <ion-col>
+                  <ion-item  ><strong>Zinc oxide strapping</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                    {{item.zinc_oxide_strapping}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.needles_21G_23G && item.needles_21G_23G==status">
+              <ion-col>
+                  <ion-item ><strong>21G, 23G needles</strong> </ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                  {{item.needles_21G_23G}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Cord_clamps && item.Cord_clamps==status">
+              <ion-col>
+                  <ion-item  ><strong>Cord clamps</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                       {{item.Cord_clamps}}
+                  </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Sutures_2_chromic_RC_RB_and_1_nylon && item.Sutures_2_chromic_RC_RB_and_1_nylon==status">
+              <ion-col>
+                  <ion-item ><strong>Sutures(2 chromic RC, RB & 1 nylon)</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                {{item.Sutures_2_chromic_RC_RB_and_1_nylon}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Foleys_catheter && item.Foleys_catheter==status">
+              <ion-col>
+                  <ion-item ><strong>Foleys catheter</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                  {{item.Foleys_catheter}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Syringes_2ml_and_5ml && item.Syringes_2ml_and_5ml==status" >
+              <ion-col>
+                  <ion-item  ><strong>Syringes (2ml & 5ml)</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                    {{item.Syringes_2ml_and_5ml}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Cannulas && item.Cannulas==status" >
+              <ion-col>
+                  <ion-item ><strong>Cannulas</strong> </ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                      {{item.Cannulas}}
+                  </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Crepe_bandages && item.Crepe_bandages==status">
+              <ion-col>
+                  <ion-item  ><strong>Crepe bandages</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                  {{item.Crepe_bandages}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.HCT_25mg && item.HCT_25mg==status">
+              <ion-col>
+                  <ion-item ><strong>HCT 25mg</strong>        |      </ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                    {{item.HCT_25mg}}
+                  </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Nifedipine_20mg && item.Nifedipine_20mg==status" >
+              <ion-col>
+                  <ion-item ><strong>Nifedipine 20mg</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                    {{item.Nifedipine_20mg}}
+                  </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Metformin_500mg && item.Metformin_500mg==status" >
+              <ion-col>
+                  <ion-item ><strong>Metformin 500mg</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                  {{item.Metformin_500mg}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Glibenclamide_5mg && item.Glibenclamide_5mg==status">
+              <ion-col>
+                  <ion-item ><strong>Glibenclamide 5mg</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                    {{item.Glibenclamide_5mg}}
+                  </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Frusemide_40mg && item.Frusemide_40mg==status">
+              <ion-col>
+                  <ion-item ><strong>Frusemide 40mg</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                      {{item.Frusemide_40mg}}
+                  </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.CPZ_100mg && item.CPZ_100mg==status">
+              <ion-col>
+                  <ion-item  ><strong>CPZ 100mg</strong> </ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                {{item.CPZ_100mg}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Fefo && item.Fefo==status" >
+              <ion-col>
+                  <ion-item ><strong>Fefo</strong>   </ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                {{item.Fefo}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Haloperidol && item.Haloperidol==status">
+              <ion-col>
+                  <ion-item  ><strong>Haloperidol</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                  {{item.Haloperidol}}
+                  </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Phenorbitone && item.Phenorbitone==status">
+              <ion-col>
+                  <ion-item  ><strong>Phenorbitone</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                    {{item.Phenorbitone}}
+                  </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.glucostrips && item.glucostrips==status">
+              <ion-col>
+                  <ion-item ><strong>glucostrips</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                    {{item.glucostrips}}
+                  </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.urine_Analysis_Strips && item.urine_Analysis_Strips==status">
+              <ion-col>
+                  <ion-item  ><strong>urine analysis strips</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                  {{item.urine_Analysis_Strips}}
+                  </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Betadine && item.Betadine==status">
+              <ion-col>
+                  <ion-item ><strong>Betadine</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                    {{item.Betadine}}
+                  </ion-item>
+              </ion-col>
+            </ion-row>
+
+
+            <ion-row *ngIf="item.Spirit && item.Spirit==status">
+              <ion-col>
+                  <ion-item ><strong>Spirit</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                  {{item.Spirit}}
+                  </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.G_and_I && item.G_and_I==status">
+              <ion-col>
+                  <ion-item  ><strong>G & I</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                {{item.G_and_I}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Normal_Saline && item.Normal_Saline==status">
+              <ion-col>
+                  <ion-item ><strong>Normal saline</strong> </ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                  {{item.Normal_Saline}}
+                  </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Ringers_Lactate && item.Ringers_Lactate==status">
+              <ion-col>
+                  <ion-item ><strong>Ringers lactate</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                    {{item.Ringers_Lactate}}
+                  </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.TEO && item.TEO==status">
+              <ion-col>
+                  <ion-item ><strong>TEO</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>{{item.TEO}}</ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.BP_machines && item.BP_machines==status">
+              <ion-col>
+                  <ion-item ><strong>BP machines</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>{{item.BP_machines}}</ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Glucometers && item.Glucometers==status">
+              <ion-col>
+                  <ion-item ><strong>Glucometers</strong> </ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                  {{item.Glucometers}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Thermometers && item.Thermometers==status">
+              <ion-col>
+                  <ion-item ><strong>Thermometers</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                    {{item.Thermometers}}
+                  </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="item.Haemoglobin_Machine && item.Haemoglobin_Machine==status">
+              <ion-col>
+                  <ion-item ><strong>Haemoglobin machine</strong></ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>{{item.Haemoglobin_Machine}}</ion-item>
+              </ion-col>
+            </ion-row>
+
+
+          </ion-grid>
+
+          </ion-list>
+        </ion-card-content>
+      
+      </ion-card>
+
+    </ion-list>
+
+</ion-content>
