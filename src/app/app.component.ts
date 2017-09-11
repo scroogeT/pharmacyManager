@@ -19,12 +19,12 @@ export class MyApp {
       
       // Initialize Firebase
       var config = {
-          apiKey: "AIzaSyCUEZslCxl1GAseiydL2vclGTNvNGWiaPQ",
-          authDomain: "pharmacy-manager.firebaseapp.com",
-          databaseURL: "https://pharmacy-manager.firebaseio.com",
-          projectId: "pharmacy-manager",
+          apiKey: "",
+          authDomain: "",
+          databaseURL: "",
+          projectId: "",
           storageBucket: "",
-          messagingSenderId: "129907436855"
+          messagingSenderId: ""
       };
       firebase.initializeApp(config);
       firebase.auth().onAuthStateChanged((user) => {
