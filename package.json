@@ -25,7 +25,7 @@
         "@ionic/cli-plugin-ionic-angular": "^1.0.0",
         "@ionic/storage": "2.0.1",
         "angularfire2": "^4.0.0-rc0",
-        "cordova-android": "^6.2.3",
+        "cordova-android": "^9.0.0",
         "cordova-plugin-console": "1.0.5",
         "cordova-plugin-device": "1.1.4",
         "cordova-plugin-splashscreen": "~4.0.1",
